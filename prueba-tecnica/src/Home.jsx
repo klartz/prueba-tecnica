@@ -1,8 +1,8 @@
 import { default as Grid, default as Item } from '@mui/material/Grid';
 // eslint-disable-next-line no-unused-vars
 import * as React from 'react';
+import Cart from './components/Cart/Cart';
 import ProductList from './components/ProductList/ProductList';
-import PurchaseSummary from './components/PurchaseSummary/PurchaseSummary';
 import './Home.css';
 
 const Home = () => {
@@ -16,7 +16,7 @@ const Home = () => {
 				width={'100vw'}
 				height={'50vh'}
 			>
-				<PurchaseSummary />
+				<Cart />
 			</Grid>
 			<Grid className='item-2' item xs={6} md={4} height={'50vh'}>
 				<ProductList />
