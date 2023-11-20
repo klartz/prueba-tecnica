@@ -34,13 +34,13 @@ const Detail = () => {
 				<List>
 					<ListItem disablePadding>
 						<ListItemText
-							primary={`Cantidad de items ${totalCount}`}
+							primary={`Cantidad de items: ${totalCount}`}
 							align={'center'}
 						/>
 					</ListItem>
 					<ListItem disablePadding>
 						<ListItemText
-							primary={`Precio total $${totalPrice}`}
+							primary={`Precio total: $${totalPrice}`}
 							align={'center'}
 						/>
 					</ListItem>
