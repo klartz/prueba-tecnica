@@ -7,17 +7,15 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { removeFromCart } from '../../redux/appActions';
+import {useSelector} from 'react-redux';
 import ProductCount from '../ProductCount/ProductCount';
 
 const Cart = () => {
-	const dispatch = useDispatch();
 	const selectedProducts = useSelector((state) => state.cart.products);
 
 	return (
 		<TableContainer component={Paper}>
-			<Table sx={{minWidth: 650}} aria-label='simple table'>
+			<Table sx={{minWidth: 650}}>
 				<TableHead>
 					<TableRow>
 						<TableCell align='center' style={{fontSize: '2em'}}>
@@ -46,14 +44,7 @@ const Cart = () => {
 							<TableCell align='center'>
 								<ProductCount product={product} />
 							</TableCell>
-							<TableCell
-								align='center'
-								component='th'
-								scope='product'
-								onClick={() => {
-									dispatch(removeFromCart(product));
-								}}
-							>
+							<TableCell align='center' component='th' scope='product'>
 								{product.name}
 							</TableCell>
 							<TableCell align='center'>{product.price}</TableCell>
