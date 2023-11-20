@@ -18,6 +18,9 @@ const CustomTableCell = ({align = 'center', fontSize = '1em', children}) => (
 	</TableCell>
 );
 
+/*
+	This component is used to show the products in the cart.
+*/
 const Cart = () => {
 	const selectedProducts = useSelector((state) => state.cart.products);
 

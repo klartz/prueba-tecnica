@@ -11,6 +11,10 @@ import {useDispatch} from 'react-redux';
 import {addToCart} from '../../redux/appActions';
 import getProductList from '../../services/getProductList';
 
+/*
+	This component is used to show the list of products that can be added to the
+	cart.
+*/
 const ProductList = () => {
 	const dispatch = useDispatch();
 	const [products, setProducts] = useState([]);

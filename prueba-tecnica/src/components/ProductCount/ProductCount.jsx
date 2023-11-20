@@ -5,6 +5,10 @@ import {Button} from '@mui/base';
 import {useDispatch} from 'react-redux';
 import {addToCart, removeFromCart} from '../../redux/appActions';
 
+/*
+	This component is used to show the amount of intances of a product in the
+	card and modify it.
+*/
 const ProductCount = ({product: clickedProduct}) => {
 	const dispatch = useDispatch();
 	const [product, setProduct] = useState(null);

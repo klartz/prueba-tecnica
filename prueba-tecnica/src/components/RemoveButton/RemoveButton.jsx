@@ -5,7 +5,9 @@ import { Button } from '@mui/material';
 import { removeProductFromCart } from '../../redux/appActions';
 import propTypes from 'prop-types';
 
-
+/*
+    This component is used to remove all instances of a product from the cart.
+*/
 const RemoveButton = ({product}) => {
     const dispatch = useDispatch();
 

@@ -8,6 +8,10 @@ import React, {useEffect, useState} from 'react';
 import {useSelector} from 'react-redux';
 import {getTotalCount, getTotalPrice} from '../../utils/getDetail';
 
+/*
+	This component is used to show the total count and total price of the products
+	in the cart.
+*/
 const Detail = () => {
 	const productsInCart = useSelector((state) => state.cart.products);
 
