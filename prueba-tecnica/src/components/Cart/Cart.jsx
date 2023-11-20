@@ -56,8 +56,8 @@ const Cart = () => {
 							>
 								{product.name}
 							</TableCell>
-							<TableCell align='right'>{product.price}</TableCell>
-							<TableCell align='right'>
+							<TableCell align='center'>{product.price}</TableCell>
+							<TableCell align='center'>
 								{product.price * product.count}
 							</TableCell>
 						</TableRow>
