@@ -11,7 +11,7 @@ import {useDispatch} from 'react-redux';
 import {addToCart} from '../../redux/appActions';
 import getProductList from '../../services/getProductList';
 
-const ProductListNew = () => {
+const ProductList = () => {
 	const dispatch = useDispatch();
 	const [products, setProducts] = useState([]);
 
@@ -58,4 +58,4 @@ const ProductListNew = () => {
 	);
 };
 
-export default ProductListNew;
+export default ProductList;
