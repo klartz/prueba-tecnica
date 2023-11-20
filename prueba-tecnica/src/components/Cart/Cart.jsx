@@ -11,6 +11,13 @@ import {useSelector} from 'react-redux';
 import ProductCount from '../ProductCount/ProductCount';
 import RemoveButton from '../RemoveButton/RemoveButton';
 
+// eslint-disable-next-line react/prop-types
+const CustomTableCell = ({align = 'center', fontSize = '1em', children}) => (
+	<TableCell align={align} style={{fontSize: `${fontSize}`}}>
+		{children}
+	</TableCell>
+);
+
 const Cart = () => {
 	const selectedProducts = useSelector((state) => state.cart.products);
 
@@ -19,21 +26,19 @@ const Cart = () => {
 			<Table sx={{minWidth: 650}}>
 				<TableHead>
 					<TableRow>
-						<TableCell align='center' style={{fontSize: '2em'}}>
+						<CustomTableCell fontSize='2em'>
 							Cantidad
-						</TableCell>
-						<TableCell align='center' style={{fontSize: '2em'}}>
+						</CustomTableCell>
+						<CustomTableCell fontSize='2em'>
 							Descripción
-						</TableCell>
-						<TableCell align='center' style={{fontSize: '2em'}}>
-							Subtotal&nbsp;
-						</TableCell>
-						<TableCell align='center' style={{fontSize: '2em'}}>
-							Total&nbsp;
-						</TableCell>
-						<TableCell align='center' style={{fontSize: '2em'}}>
-							&nbsp;
-						</TableCell>
+						</CustomTableCell>
+						<CustomTableCell fontSize='2em'>
+							Subtotal
+						</CustomTableCell>
+						<CustomTableCell fontSize='2em'>
+							Total
+						</CustomTableCell>
+						<CustomTableCell/>
 					</TableRow>
 				</TableHead>
 				<TableBody>
@@ -42,19 +47,15 @@ const Cart = () => {
 							key={product.name}
 							sx={{'&:last-child td, &:last-child th': {border: 0}}}
 						>
-							<TableCell align='center'>
+							<CustomTableCell>
 								<ProductCount product={product} />
-							</TableCell>
-							<TableCell align='center' component='th' scope='product'>
-								{product.name}
-							</TableCell>
-							<TableCell align='center'>{product.price}</TableCell>
-							<TableCell align='center'>
-								{product.price * product.count}
-							</TableCell>
-							<TableCell align='right'>
+							</CustomTableCell>
+							<CustomTableCell>{product.name}</CustomTableCell>
+							<CustomTableCell>{product.price}</CustomTableCell>
+							<CustomTableCell>{product.price * product.count}</CustomTableCell>
+							<CustomTableCell align='right'>
 								<RemoveButton product={product} />
-							</TableCell>
+							</CustomTableCell>
 						</TableRow>
 					))}
 				</TableBody>
