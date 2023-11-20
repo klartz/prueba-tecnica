@@ -25,7 +25,9 @@ const ProductCount = ({product: clickedProduct}) => {
 	};
 
 	return (
-		<div style={{display: 'flex', alignItems: 'center'}}>
+		<div
+			style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}
+		>
 			<Button
 				onClick={() => {
 					handleAdd();
@@ -33,7 +35,7 @@ const ProductCount = ({product: clickedProduct}) => {
 			>
 				+
 			</Button>
-			<div>{product?.count}</div>
+			<div style={{padding: '0% 3%'}}>{product?.count}</div>
 			<Button
 				onClick={() => {
 					handleSubstract();
