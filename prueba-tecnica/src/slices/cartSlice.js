@@ -13,8 +13,6 @@ const cartSlice = createSlice({
 			if not, add product to state.products with count = 1
 		*/
 		addToCart: (state, action) => {
-			console.log('action desde reducer', action);
-			console.log('state desde reducer', state.products);
 			const product = action.payload;
 			const productIndex = state.products.findIndex(
 				(stateProduct) => stateProduct.name === product.name

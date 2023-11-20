@@ -11,7 +11,6 @@ const ProductCount = ({product: clickedProduct}) => {
 
 	// when components mounts or product is updated
 	useEffect(() => {
-		console.log('clickedProduct', clickedProduct);
 		if (clickedProduct) {
 			setProduct(clickedProduct);
 		}
