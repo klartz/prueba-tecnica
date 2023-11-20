@@ -4,6 +4,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import ListSubheader from '@mui/material/ListSubheader';
+import {Paper} from '@mui/material';
 // eslint-disable-next-line no-unused-vars
 import React, {useEffect, useState} from 'react';
 import {useDispatch} from 'react-redux';
@@ -20,9 +21,17 @@ const ProductListNew = () => {
 	}, []);
 
 	return (
-		<Box sx={{width: '100%', maxWidth: 360, bgcolor: 'background.paper'}}>
-			<nav aria-label='main mailbox folders'>
-				<ListSubheader style={{fontSize: '1.5em', textAlign: 'center'}}>
+		<Box
+			sx={{
+				width: '100%',
+				maxWidth: 450,
+				alignItems: 'center',
+			}}
+		>
+			<Paper elevation={4}>
+				<ListSubheader
+					style={{fontSize: '1.5em', textAlign: 'center', color: 'black'}}
+				>
 					Seleccionar nuevo producto
 				</ListSubheader>
 				<List>
@@ -33,6 +42,7 @@ const ProductListNew = () => {
 									<ListItemButton>
 										<ListItemText
 											primary={`${product.name} - $${product.price}`}
+											style={{fontSize: '1.5em'}}
 											align={'center'}
 											onClick={() => {
 												dispatch(addToCart(product));
@@ -43,7 +53,7 @@ const ProductListNew = () => {
 							)
 					)}
 				</List>
-			</nav>
+			</Paper>
 		</Box>
 	);
 };
