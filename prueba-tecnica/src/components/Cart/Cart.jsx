@@ -9,6 +9,7 @@ import TableRow from '@mui/material/TableRow';
 import React from 'react';
 import {useSelector} from 'react-redux';
 import ProductCount from '../ProductCount/ProductCount';
+import RemoveButton from '../RemoveButton/RemoveButton';
 
 const Cart = () => {
 	const selectedProducts = useSelector((state) => state.cart.products);
@@ -50,6 +51,9 @@ const Cart = () => {
 							<TableCell align='center'>{product.price}</TableCell>
 							<TableCell align='center'>
 								{product.price * product.count}
+							</TableCell>
+							<TableCell align='right'>
+								<RemoveButton product={product} />
 							</TableCell>
 						</TableRow>
 					))}
